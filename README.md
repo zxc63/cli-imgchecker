@@ -1,4 +1,5 @@
 # imgcheck
+### Сделано чисто под Telegraph, метаданные изображение.
 
 Разбор метаданных изображения + валидация. C++17, ноль зависимостей, один файл.
 
@@ -8,7 +9,6 @@
 g++ -std=c++17 -O2 -Wall -Wextra -o imgcheck imgcheck.cpp
 ```
 
-На Render в Docker-образе достаточно `apt-get install -y g++` на этапе build.
 
 ## Что умеет
 
@@ -107,8 +107,8 @@ export async function checkImage(path, opts = []) {
 }
 ```
 
-Дальше в роуте аплоада: если `!result.ok` — отдаёшь `400` с `result.errors`,
-если `result.exifPresent` — прогоняешь файл через ресайзер, который метаданные
+Дальше в роуте аплоада: если `!result.ok` — отдаёте `400` с `result.errors`,
+если `result.exifPresent` — прогоняете файл через ресайзер, который метаданные
 не переносит (sharp с `.rotate()` вырежет EXIF и заодно применит `Orientation`).
 
 ## Тесты
